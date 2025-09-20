@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>Modern Tech Store</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+  
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #242);
+      color: #f4f4f4;
+      overflow-x: hidden;
+    }
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: left;
+  gap: 15px;
+  margin-left: 100px;
+}
+
+.logo img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: white;
+  border: 2px solid white;
+}
+
+.logo h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: black;
+}
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    header {
+      text-align: center;
+      padding: 10px 20px 30px 20px;
+      background: linear-gradient(green, lightgreen,yellow);
+      color: #fff;
+      animation: fadeInDown 1s ease-in-out;
+      width: 100%;
+      display: block;
+    }
+
+    header h1 {
+      font-size: 3.5rem;
+      animation: scaleUp 1s ease-in-out;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+
+    nav {
+      margin-top: 20px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+       background-color:crimson;
+      padding: 10px 20px;
+      border-radius: 30px;
+      color: #fff;
+      font-weight: bold;
+      transition: all 0.4s ease;
+    }
+
+    .nav-links a:hover {
+      background: #fff;
+      color: #111;
+      transform: scale(1.1);
+    }
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 20px;
+      background:radial-gradient(circle ,skyblue, blue);
+      text-align: center;
+      animation: fadeInUp 1s ease-in-out;
+    }
+
+    .hero img {
+      max-width: 100%;
+      width: 500px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+
+    .hero-content {
+      max-width: 700px;
+      margin-left: 30px;
+    }
+
+    .hero-content h3 {
+      font-size: 2.2rem;
+      color: black;
+      margin-bottom: 20px;
+    }
+
+    .hero-content p {
+      margin-top: 15px;
+      font-size: 1.1rem;
+      color: #ddd;
+      line-height: 1.6;
+    }
+
+    .hero-content p:last-child {
+      margin-top: 20px;
+      font-style: italic;
+      color: #f5efef;
+    }
+
+    .search-bar {
+      text-align: center;
+      margin: auto ;
+      width: 150px;
+      align-items: center;
+      height: 20px;
+      padding: 15px;
+      border: 1px dotted white;
+      color: white;
+      background-color:goldenrod;
+    }
+    .search-bar:hover{
+      color: black;
+      background-color: beige;
+    }
+
+    .catalog {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+      gap: 30px;
+      
+    }
+
+    .product {
+      width: 280px;
+      background: linear-gradient(135deg, #f2d479, #f6d365, #fda085);
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+      overflow: hidden;
+      border: 5px solid white;
+      transition: transform 0.3s ease;
+    }
+    .product:hover{
+     border: 5px solid blue;
+     box-shadow: 5px 5px 10px red, -5px -5px 10px red;
+     background: linear-gradient(135deg,#FCFB62, #91F9E5);
+    }
+
+    .product img {
+      width: 100px;
+      height: 100px;
+      border: 2px solid black;
+      border-radius: 50%;
+      align-items: center;
+      margin:5px 80px ;
+    }
+
+    .product-details {
+      padding: 10px;
+    }
+
+    .product-details h2 {
+      font-size: 1.3rem;
+      color:black;
+      text-align: center;
+    }
+
+    .product-details p {
+      font-size: 0.9rem;
+      color: black;
+      text-indent: 20px;
+      text-align: justify;
+    }
+
+    .price {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-top: 15px;
+      color:#111010;
+      text-align: center;
+    }
+
+    .order-btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #00ffcc;
+      color: #000;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .order-btn:hover {
+      background-color: #00e6b8;
+      transform: scale(1.05);
+    }
+
+  .about, .contact, .shop {
+  background-repeat: no-repeat;
+  background-size: cover;
+  max-width: 90%;
+  height: 550px;
+  margin: 20px auto;
+  border-radius: 20px;
+  padding: 0;
+  position: relative;
+  color: white;
+    }
+.about{
+      background-image: url(about.jpg);
+  }
+ .contact {
+  background-image: url("contact.jpg"); 
+}
+
+.shop {
+  background-image: url("shop.jpg");
+}
+
+.shop_link{
+      background-color:darkgoldenrod;
+      padding: 20px;
+      border-radius: 30px;
+      color: #fff;
+      font-weight: bold;
+      margin-left: 40%;
+      
+
+    }
+
+    .shop_link:hover {
+      background: #fff;
+      color: #111;
+      transform: scale(1.1);
+    }
+  
+      .about .abt_txt{
+      border: 2px solid white;
+      border-radius: 20px;
+      height:350px ;
+      width: 60%;
+      text-align: justify;
+      text-indent: 20px;
+      padding: 50px;
+      margin-left: 50px;
+      background: rgba(58, 55, 55, 0.6);
+   
+    }
+
+.shop .shp_txt, .contact .cnt_txt {
+  border: 2px solid white;
+  border-radius: 20px;
+  height: 400px;
+  width: 60%;
+  text-align: justify;
+  text-indent: 20px;
+  padding: 30px;
+  margin: 30px auto;
+  background: rgba(0, 0, 0, 0.6);
+  line-height: 30px;
+}
+.about .abt_txt:hover,
+.contact .cnt_txt:hover, 
+.shop .shp_txt:hover {
+  border: 5px solid red;
+  box-shadow: 5px 5px 10px blue, -5px -5px 10px blue;
+}
+    .about h2{
+      text-align: left;
+      text-indent: 180px;
+      font-size:50px;
+      margin-bottom: 15px;
+      color:white;
+      font-weight: bold;
+    }
+     .product_h1,.contact h2, .shop h2 {
+      font-size:50px;
+      margin-bottom: 15px;
+      color:white;
+      font-weight: bold;
+      text-align: center;
+      text-shadow: #111010;
+
+    }
+
+    footer {
+      background: #111010;
+      color:white;
+      text-align: center;
+      padding: 30px 10px;
+    }
+
+    .top{
+      text-decoration: none;
+      width: 50px;
+      height: 0px;
+      border: 2px solid black;
+      color: black;
+      background: linear-gradient( pink ,yellow);
+      bottom: 10px;
+      right: 20px;
+      padding: 10px;
+      border-radius: 10px ;
+      text-align: center;
+      font-weight: bold;
+      position: fixed;
+    }
+
+    footer a:hover{
+       text-decoration: none;
+      width: 30px;
+      height: 30px;
+      border: 2px solid black;
+      color: black;
+      background: radial-gradient(circle,blue,white,skyblue);
+    }
+
+    @keyframes fadeInDown {
+      0% { opacity: 0; transform: translateY(-30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(50px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes scaleUp {
+      0% { transform: scale(0.9); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .product {
+        width: 90%;
+      }
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+      .hero-content {
+        margin-left: 0;
+      }
+    }
+    
+ 
+ </style>
+</head>
+<body>
+<header class="home" id="home">
+  <div class="header-content">
+    <div class="logo">
+      <img src="logo.jpg" alt="Modern Tech Store Logo">
+      <h1>𝑴𝒐𝒅𝒆𝒓𝒏 𝑻𝒆𝒄𝒉 𝑺𝒕𝒐𝒓𝒆</h1>
+    </div>
+    <p>Explore the future of technology today!</p>
+  </div>
+
+  <nav>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#product">Products</a></li>
+      <li><a href="#shop">Shop</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+  <section class="hero">
+    <img src="into_laptop.jpg" alt="Laptop Banner">
+    <div class="hero-content">
+      <h3>Your One-Stop Electronic Market</h3>
+      <p>At Modern Tech Store, we don’t just sell tech — we deliver innovation. From next-gen devices to the latest smart gadgets, we bring the future to your fingertips.</p>
+      <p>Whether you're a tech enthusiast or just looking for reliable gear, we’ve got you covered.</p>
+    </div>
+  </section>
+  
+  <h1 class="product_h1" id="product">PRODUCTS</h1>
+ <section class="catalog" id="catalog">
+  <div class="product">
+    <img src="wirelessheadphone.jpg" alt="Headphones">
+    <div class="product-details">
+      <h2>Wireless Headphones</h2>
+      <p>Experience immersive audio with deep bass, active noise cancellation, and up to 30 hours of playtime.</p>
+      <div class="price">$99.99</div>
+      <a href="https://www.google.com/search?sca_esv=39b9ebc457fec9be&rlz=1C1GCEA_enIN1164IN1167&sxsrf=AE3TifOV_js4nOwye1-BKwZuAMYGJDy_iQ:1758301809111&q=rockerz+430+boat+rockerz+wireless+headphones+online+shopping&uds=AOm0WdE2fekQnsyfYEw8JPYozOKzC44rGToToAbDw368D_bJ-iOmuS74RxYLTi1ZVCoEEhuvKZNKh93C6o6ni1l98_-MrbwWSSAfQgdKl22nrk6hyqzaDijAfw4S-IbErgCtpUybqW_nLHdmDhWNkOufBGTOlLPYDmstHBJj0Q7n6Fx_BEaPPSIgY5upKFBsIrlc9jtz8nKqZiduYhARwluMHGio6D3QHbSnLeykL-t2CSL6Lgzo6dQ&udm=2&sa=X&ved=2ahUKEwikx_XVqOWPAxUmcfUHHd9uCTsQxKsJKAN6BAghEAE&ictx=0&biw=1353&bih=592&dpr=1.01" class="order-btn">Order Now</a>
+    </div>
+  </div>
+
+  <div class="product">
+    <img src="smartwatches.jpg" alt="Smart Watch">
+    <div class="product-details">
+      <h2>Smart Watch</h2>
+      <p>Stay connected with call, message, and app notifications while tracking heart rate, sleep, and fitness goals.</p>
+      <div class="price">$149.99</div>
+      <a href="https://www.google.com/search?q=smart+watches+online+shopping&sca_esv=39b9ebc457fec9be&rlz=1C1GCEA_enIN1164IN1167&udm=2&biw=1353&bih=592&sxsrf=AE3TifMTSGQPRJHSVA_HA85SCC0lBc2nAw%3A1758301816958&ei=eI7NaJOdOvzR1e8Px4vPmAk&oq=smart+wat+online+shopping&gs_lp=Egtnd3Mtd2l6LWltZyIZc21hcnQgd2F0IG9ubGluZSBzaG9wcGluZyoCCAIyBhAAGAcYHjIGEAAYBxgeMgYQABgHGB4yBhAAGAcYHjIGEAAYBxgeMgYQABgHGB4yBhAAGAcYHjIGEAAYBxgeMgYQABgHGB4yBhAAGAcYHkjnXVCNFljLQnABeACQAQCYAdIBoAHGE6oBBjAuMTMuMbgBAcgBAPgBAZgCCqACjg_CAgcQIxgnGMkCwgIHEAAYgAQYE8ICCBAAGBMYBxgemAMAiAYBkgcFMC44LjKgB_I1sgcFMC44LjK4B44PwgcFMi0yLjjIB10&sclient=gws-wiz-img" class="order-btn">Order Now</a>
+    </div>
+  </div>
+
+  <div class="product">
+    <img src="laptop.jpg" alt="laptop">
+    <div class="product-details">
+      <h2>Laptop</h2>
+      <p>Powerful performance for work, gaming, and creativity with a slim, lightweight design and long battery life.</p>
+      <div class="price">$899.99</div>
+      <a href="https://www.google.com/search?q=laptop+online+shopping&sca_esv=39b9ebc457fec9be&rlz=1C1GCEA_enIN1164IN1167&udm=2&biw=1353&bih=592&sxsrf=AE3TifPZzRJE6OCnlepq-0kmmo3DLT9bzQ:1758302045213&ei=XY_NaIDjDOOdvr0PpYKPoAQ&ved=0ahUKEwjAhcDGqeWPAxXjjq8BHSXBA0QQ4dUDCBE&uact=5&oq=laptop+online+shopping&gs_lp=Egtnd3Mtd2l6LWltZyIWbGFwdG9wIG9ubGluZSBzaG9wcGluZzIHEAAYgAQYEzIIEAAYExgHGB4yCBAAGBMYBxgeMggQABgTGAcYHjIIEAAYExgHGB4yCBAAGBMYBxgeMgcQABiABBgTMggQABgTGAcYHjIIEAAYExgHGB4yCBAAGBMYBxgeSPhCUJ4NWMA7cAJ4AJABAJgB5gGgAZ8SqgEFMC45LjO4AQPIAQD4AQGYAgqgAvUMwgIGEAAYExgewgIIEAAYExgIGB7CAgYQABgHGB7CAggQABgHGAgYHsICBxAjGCcYyQKYAwCIBgGSBwUyLjQuNKAHmDCyBwUwLjQuNLgHywzCBwUzLTkuMcgHaQ&sclient=gws-wiz-img" class="order-btn">Order Now</a>
+    </div>
+  </div>
+
+  <div class="product">
+    <img src="phone.jpg" alt="Mobile phone">
+    <div class="product-details">
+      <h2>Mobile Phone</h2>
+      <p>Capture stunning photos, enjoy blazing-fast speed, and all-day battery with the latest smartphone technology.</p>
+      <div class="price">$699.99</div>
+      <a href="https://www.google.com/search?q=mobile+online+shopping&sca_esv=39b9ebc457fec9be&rlz=1C1GCEA_enIN1164IN1167&udm=2&biw=1353&bih=592&sxsrf=AE3TifMNbBF1PUjRgKw9MgNnGbX4Y1O7Sg%3A1758303469342&ei=7ZTNaKzVFKLr1e8P95iSyQY&ved=0ahUKEwjs_8ntruWPAxWidfUHHXeMJGkQ4dUDCBE&uact=5&oq=mobile+online+shopping&gs_lp=Egtnd3Mtd2l6LWltZyIWbW9iaWxlIG9ubGluZSBzaG9wcGluZzIHEAAYgAQYEzIHEAAYgAQYEzIIEAAYExgHGB4yCBAAGBMYBxgeMggQABgTGAcYHjIIEAAYExgHGB4yBxAAGIAEGBMyChAAGBMYBxgKGB4yCBAAGBMYBxgeMggQABgTGAcYHkjwOFCbBFjeHnABeACQAQCYAe0BoAHDEaoBBTAuNS42uAEDyAEA-AEBmAIHoAKbCsICCBAAGBMYCBgewgIGEAAYBxgewgIIEAAYBxgIGB7CAggQABgFGAcYHsICBxAjGCcYyQLCAgkQABiABBgTGAqYAwCIBgGSBwUxLjEuNaAHhiyyBwUwLjEuNbgHjArCBwUyLTEuNsgHQA&sclient=gws-wiz-img" class="order-btn">Order Now</a>
+    </div>
+  </div>
+
+  <div class="product">
+    <img src="earbuds.jpg" alt="earbuds">
+    <div class="product-details">
+      <h2>Wireless Ear Buds</h2>
+      <p>Compact, lightweight earbuds with crystal-clear sound, touch controls, and up to 24 hours of battery life.</p>
+      <div class="price">$89.99</div>
+      <a href="https://www.google.com/search?q=ear+buds+online+shopping&sca_esv=39b9ebc457fec9be&rlz=1C1GCEA_enIN1164IN1167&udm=2&biw=1353&bih=592&sxsrf=AE3TifO1z5bUxVx-vON7Hv2eYH5o2C4B5w%3A1758302325558&ei=dZDNaNbuIdDO1e8P9puGUQ&ved=0ahUKEwiW_ZbMquWPAxVQZ_UHHfaNIQoQ4dUDCBE&uact=5&oq=ear+buds+online+shopping&gs_lp=Egtnd3Mtd2l6LWltZyIYZWFyIGJ1ZHMgb25saW5lIHNob3BwaW5nMgcQABiABBgTMgYQABgTGB5ImIgEUOoDWNI3cAF4AJABAJgBiwKgAeYWqgEFMC44Lja4AQPIAQD4AQGYAgygAuISwgIIEAAYExgHGB7CAgYQABgHGB7CAgcQIxgnGMkCwgIIEAAYBxgKGB6YAwCIBgGSBwUxLjIuOaAH8yyyBwUwLjIuObgH0RLCBwUyLTQuOMgHZg&sclient=gws-wiz-img" class="order-btn">Order Now</a>
+    </div>
+  </div>
+
+  <div class="product">
+    <img src="printer.jpg" alt="printer">
+    <div class="product-details">
+      <h2>Printer</h2>
+      <p>All-in-one wireless printer with high-speed printing, scanning, and copying for home or office use.</p>
+      <div class="price">$199.99</div>
+      <a href="https://www.google.com/search?q=printer+online+shopping&sca_esv=39b9ebc457fec9be&rlz=1C1GCEA_enIN1164IN1167&udm=2&biw=1353&bih=592&sxsrf=AE3TifPkxUTimJu9-rd69IAwKIXM76kkwA%3A1758303157423&ei=tZPNaOHMGcTr1e8Phe6BGQ&ved=0ahUKEwih--vYreWPAxXEdfUHHQV3IAMQ4dUDCBE&uact=5&oq=printer+online+shopping&gs_lp=Egtnd3Mtd2l6LWltZyIXcHJpbnRlciBvbmxpbmUgc2hvcHBpbmcyBxAAGIAEGBMyCBAAGBMYBxgeMggQABgTGAcYHjIIEAAYExgHGB4yCBAAGBMYBxgeMggQABgTGAcYHjIIEAAYExgHGB4yChAAGBMYBRgHGB4yChAAGBMYBRgHGB4yChAAGBMYBRgHGB5IvDJQxgNYuyhwAXgAkAEAmAHpAaABnheqAQUwLjkuNrgBA8gBAPgBAZgCDqACkRXCAgYQABgTGB7CAgYQABgHGB7CAggQABgHGAoYHsICBxAjGCcYyQKYAwCIBgGSBwUxLjYuN6AH-DOyBwUwLjYuN7gHhxXCBwYyLTMuMTHIB3g&sclient=gws-wiz-img" class="order-btn">Order Now</a>
+    </div>
+  </div>
+
+  <div class="product">
+    <img src="telivision.jpg" alt="television">
+    <div class="product-details">
+      <h2>Television</h2>
+      <p>Enjoy vivid colors and sharp details with this 4K Ultra HD Smart TV, perfect for streaming and gaming.</p>
+      <div class="price">$499.99</div>
+      <a href="https://www.google.com/search?q=television+online+shopping&sca_esv=39b9ebc457fec9be&rlz=1C1GCEA_enIN1164IN1167&udm=2&biw=1353&bih=592&sxsrf=AE3TifN9nOW68igD2oMn8kUJtJMn7ZVQTw%3A1758303291358&ei=O5TNaNDQFZ_Bvr0PjJ7IiQI&ved=0ahUKEwiQ2tqYruWPAxWfoK8BHQwPMiEQ4dUDCBE&uact=5&oq=television+online+shopping&gs_lp=Egtnd3Mtd2l6LWltZyIadGVsZXZpc2lvbiBvbmxpbmUgc2hvcHBpbmcyCBAAGBMYBxgeMggQABgTGAcYHjIHEAAYgAQYEzIHEAAYgAQYEzIKEAAYExgHGAgYHjIIEAAYExgFGB4yCBAAGBMYCBgeMggQABgTGAgYHkjZT1C2BljwSXACeACQAQCYAd0BoAGPG6oBBjAuMTIuNrgBA8gBAPgBAZgCDqACihPCAgcQIxgnGMkCwgIGEAAYBxgewgIIEAAYBRgHGB7CAggQABgHGAgYHpgDAIgGAZIHBTIuOC40oAf4QLIHBTAuOC40uAfqEsIHCDAuMS4zLjEwyAd7&sclient=gws-wiz-img" class="order-btn">Order Now</a>
+    </div>
+  </div>
+
+  <div class="product">
+    <img src="usbdrive.jpg" alt="usb drive">
+    <div class="product-details">
+      <h2>USB-Drive</h2>
+      <p>Portable, high-speed USB drive with large storage capacity to keep your files safe and accessible anywhere.</p>
+      <div class="price">$29.99</div>
+      <a href="https://www.google.com/search?q=usb-drive+online+shopping&sca_esv=39b9ebc457fec9be&rlz=1C1GCEA_enIN1164IN1167&udm=2&biw=1353&bih=592&sxsrf=AE3TifOYLHI_daG5d8vz2HeGIEUH5o9wtw%3A1758303726476&ei=7pXNaL3sHMD21e8P7tLLqQs&ved=0ahUKEwi9m5jor-WPAxVAe_UHHW7pMrUQ4dUDCBE&uact=5&oq=usb-drive+online+shopping&gs_lp=Egtnd3Mtd2l6LWltZyIZdXNiLWRyaXZlIG9ubGluZSBzaG9wcGluZ0izWlCLA1jJLnABeACQAQCYAa0CoAHxEqoBCDAuMTQuMC4xuAEDyAEA-AEBmAILoAKBDsICBxAjGCcYyQLCAgcQABiABBgTwgIIEAAYExgHGB7CAgoQABgTGAcYChgewgIGEAAYBxgewgIJEAAYgAQYExgKwgIKEAAYExgFGAcYHsICBBAAGB6YAwCIBgGSBwcxLjkuMC4xoAf3J7IHBzAuOS4wLjG4B-ENwgcHMi0yLjguMcgHdQ&sclient=gws-wiz-img" class="order-btn">Order Now</a>
+    </div>
+  </div>
+
+  <div class="product">
+    <img src="tab.jpg" alt="Tablet">
+    <div class="product-details">
+      <h2>HD Tablet</h2>
+      <p>Lightweight tablet with a stunning HD display, perfect for streaming, reading, and productivity on-the-go.</p>
+      <div class="price">$199.99</div>
+      <a href="https://www.google.com/search?q=tab+online+shopping&sca_esv=39b9ebc457fec9be&rlz=1C1GCEA_enIN1164IN1167&udm=2&biw=1353&bih=592&sxsrf=AE3TifMncLeFjtB4bdazCMhQyRPWAeBi3A%3A1758303953722&ei=0ZbNaOjoK_eTseMPs7akUQ&ved=0ahUKEwiolcbUsOWPAxX3SWwGHTMbKQoQ4dUDCBE&uact=5&oq=tab+online+shopping&gs_lp=Egtnd3Mtd2l6LWltZyITdGFiIG9ubGluZSBzaG9wcGluZzIIEAAYExgHGB4yCBAAGBMYBxgeMggQABgTGAcYHjIIEAAYExgHGB4yCBAAGBMYBxgeMggQABgTGAcYHjIIEAAYExgHGB4yCBAAGBMYBxgeMggQABgTGAcYHjIHEAAYgAQYE0i0SFDNA1joQnAEeACQAQCYAcwBoAGmEqoBBjAuMTQuMbgBA8gBAPgBAZgCCqACownCAgcQIxgnGMkCwgIKEAAYExgFGAcYHsICBhAAGAcYHpgDAIgGAZIHAzMuN6AHmCqyBwMwLje4B4EJwgcFMi0xLjnIB2I&sclient=gws-wiz-img" class="order-btn">Order Now</a>
+    </div>
+  </div>
+
+  <div class="product">
+    <img src="speaker.jpg" alt="Speaker">
+    <div class="product-details">
+      <h2>Bluetooth Speaker</h2>
+      <p>Portable speaker with booming bass, clear vocals, and waterproof design for indoor and outdoor fun.</p>
+      <div class="price">$79.99</div>
+      <a href="https://www.google.com/search?q=speaker+online+shopping&sca_esv=39b9ebc457fec9be&rlz=1C1GCEA_enIN1164IN1167&udm=2&biw=1353&bih=592&sxsrf=AE3TifNGmy1lnLLfqd-BinGMd_QivYYXnw%3A1758304047606&ei=L5fNaKXrJJGxwcsPlYDdwQQ&ved=0ahUKEwjlvqiBseWPAxWRWHADHRVAN0gQ4dUDCBE&uact=5&oq=speaker+online+shopping&gs_lp=Egtnd3Mtd2l6LWltZyIXc3BlYWtlciBvbmxpbmUgc2hvcHBpbmcyBxAAGIAEGBMyCBAAGBMYBxgeMggQABgTGAcYHjIIEAAYExgHGB4yBxAAGIAEGBMyCBAAGBMYBxgeMggQABgTGAcYHjIIEAAYExgHGB4yCBAAGBMYBxgeMggQABgTGAcYHkjJggRQ0-IDWM_9A3ADeACQAQCYAaEBoAGPC6oBBDAuMTC4AQPIAQD4AQGYAg2gArAMwgIIEAAYExgIGB7CAgoQABgTGAgYChgewgIGEAAYBxgewgIIEAAYBxgKGB7CAgcQIxgnGMkCmAMAiAYBkgcEMy4xMKAHqCeyBwQwLjEwuAeFDMIHBjItMS4xMsgHjAE&sclient=gws-wiz-img" class="order-btn">Order Now</a>
+    </div>
+  </div>
+
+  <div class="product">
+    <img src="gamingmouse.jpg" alt="Gaming Mouse">
+    <div class="product-details">
+      <h2>Gaming Mouse</h2>
+      <p>Ergonomic gaming mouse with ultra-precise tracking, customizable DPI, and RGB lighting effects.</p>
+      <div class="price">$59.99</div>
+      <a href="https://www.google.com/search?q=best+gaming+mouse+online+shopping&sca_esv=39b9ebc457fec9be&rlz=1C1GCEA_enIN1164IN1167&udm=2&biw=1353&bih=592&sxsrf=AE3TifPERqJYn-EywuLneJBF1uM5DquCJg%3A1758304168282&ei=qJfNaJWEEa2useMPtoi5kAk&oq=gaming+mouse+online+shopping&gs_lp=Egtnd3Mtd2l6LWltZyIcZ2FtaW5nIG1vdXNlIG9ubGluZSBzaG9wcGluZyoCCAAyBhAAGAUYHkj7hgFQygNYg3FwAngAkAEAmAH5AaABuReqAQYwLjE5LjG4AQPIAQD4AQGYAhOgAqAVwgIHEAAYgAQYE8ICCBAAGBMYBxgewgIGEAAYBxgewgIHECMYJxjJAsICBBAAGB7CAggQABgFGAcYHsICCBAAGAcYCBgemAMAiAYBkgcGMi4xNi4xoAefO7IHBjAuMTYuMbgHhxXCBwgwLjIuMy4xNMgHnAE&sclient=gws-wiz-img" class="order-btn">Order Now</a>
+    </div>
+  </div>
+
+  <div class="product">
+    <img src="usbchub.jpg" alt="USB-C Hub">
+    <div class="product-details">
+      <h2>USB-C Hub</h2>
+      <p>Expand your connectivity with multiple ports including HDMI, USB 3.0, and SD card reader in one hub.</p>
+      <div class="price">$39.99</div>
+      <a href="https://www.google.com/search?q=usb+c+hub+online+shopping&sca_esv=39b9ebc457fec9be&rlz=1C1GCEA_enIN1164IN1167&udm=2&biw=1353&bih=592&sxsrf=AE3TifM2mq6QBRiqWeMscy10sbZ4PxdscQ%3A1758304220356&ei=3JfNaJvFFe6inesPqquCmAc&ved=0ahUKEwibo9jTseWPAxVuUWcHHaqVAHMQ4dUDCBE&uact=5&oq=usb+c+hub+online+shopping&gs_lp=Egtnd3Mtd2l6LWltZyIZdXNiIGMgaHViIG9ubGluZSBzaG9wcGluZ0i_MFCDB1jWLHABeACQAQCYAbEBoAHCD6oBBDAuMTS4AQPIAQD4AQGYAgagAoAGwgIEEAAYHsICBhAAGAcYHsICBxAjGCcYyQLCAgcQABiABBgTwgIIEAAYExgHGB7CAgoQABgTGAUYBxgemAMAiAYBkgcDMS41oAf4IrIHAzAuNbgH-AXCBwUyLTMuM8gHMA&sclient=gws-wiz-img" class="order-btn">Order Now</a>
+    </div>
+  </div>
+</section>
+
+<br><br>
+  <section class="about" id="about">
+  <h2>About Us</h2>
+  <p class="abt_txt">
+    At <strong>Modern Tech Store</strong>, our mission is to make advanced technology accessible to everyone. Founded by passionate tech enthusiasts, we aim to bring cutting-edge electronics—from everyday gadgets to high-end innovations—right to your doorstep.
+    <br><br>
+    We partner with top global brands and trusted suppliers to ensure that every product meets our high standards of performance, quality, and durability. Whether you’re upgrading your workspace, revamping your home entertainment, or just hunting for your next smart gadget—we’re here to help.
+    <br><br>
+    Customer satisfaction is at the heart of what we do. We believe technology should be simple, reliable, and inspiring. That's why our team works hard to offer detailed product descriptions, honest prices, and excellent customer support.
+  </p>
+</section>
+
+
+  <section class="shop" id="shop">
+  <h2>Shop Now</h2>
+  <div class="shp_txt">
+  <p>Ready to upgrade your tech game? At Modern Tech Store, our carefully curated product selection includes the latest in laptops, smartphones, wearables, audio gear, and much more. Every item is handpicked for quality, performance, and value.</p>
+
+  <p>🔒 <strong>Secure Shopping:</strong> Shop with confidence through our trusted payment gateways and encrypted checkout system </p>
+  
+  <p>🚚 <strong>Fast Delivery:</strong> We ship across the U.S. and internationally, ensuring your gadgets reach you safely and swiftly.</p>
+
+  <p>🛠️ <strong>Support & Warranty:</strong> Most of our products come with a 1-year warranty and 24/7 support for any queries.</p>
+<br>
+  <a class="shop_link" href="https://www.google.com/search?q=all+electronic+gadgets+like+laptop+phone+bluetooth+shopping+with+price+and+order+online">Explore & Order Now</a>
+</div></section>
+
+
+<section class="contact" id="contact">
+  <h2>Contact Us</h2>
+  <div class="cnt_txt">
+      <p  >We'd love to hear from you! Whether you have questions, feedback, or need help with an order, our support team is here to assist you.</p>
+  <p><strong>📩Email:</strong> support@moderntechstore.com</p>
+  <p><strong>📞Phone:</strong> +1 234 567 8901</p>
+  <p><strong>📍Address:</strong> 1234 Silicon Street, Tech City, USA</p>
+  <p><strong>⏰Working Hours:</strong> Mon – Sat, 9:00 AM – 7:00 PM (EST)</p>
+  <p>⏩Follow us on:</p>
+  <ul>
+    <li><a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">Instagram</a> | <a href="#">LinkedIn</a></li>
+  </ul>
+  <p>Prefer email? Fill out our <a href="#">contact form</a> and we’ll get back to you within 24 hours!</p>
+  </div>
+
+</section>
+
+
+  <footer>
+    <p>&copy; 2025 Modern Tech Store. All rights reserved.</p>
+    <p class="top"><a href="#home"> ⬆️</a></p>
+  </footer>
+
+</body>
+</html>
